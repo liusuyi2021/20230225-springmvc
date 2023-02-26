@@ -12,7 +12,9 @@
 	http://www.springframework.org/schema/context/spring-context.xsd">
     <!--配置默认的servlet处理静态资源使用这个标签一定要开启mvc注解支持<mvc:annotation-driven></mvc:annotation-driven>-->
     <mvc:annotation-driven />
+    <mvc:default-servlet-handler />
     <context:component-scan base-package="com.xzx.controller" ></context:component-scan>
+    <context:component-scan base-package="com.xzx.config" ></context:component-scan>
     <!-- 视图解析器 -->
     <bean id="internalResourceViewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -21,4 +23,6 @@
         <!-- 文件类型 -->
         <property name="suffix" value=".jsp"></property>
     </bean>
+    <!-- 开启自动映射 -->
+    <mvc:annotation-driven/>
 </beans>
